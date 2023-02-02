@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [".railway.app",'127.0.0.1']
+ALLOWED_HOSTS = ["https://web-production-25dd.up.railway.app/",'127.0.0.1']
 
 
 # Application definition
@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'ckeditor',
 
     'blog.apps.BlogConfig',
-    'storages',
 ]
 
 MIDDLEWARE = [
