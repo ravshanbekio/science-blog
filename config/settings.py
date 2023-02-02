@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str("SECRET_KEY")  
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = ["web-production-25dd.up.railway.app",'127.0.0.1']
 
