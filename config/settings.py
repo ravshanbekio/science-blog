@@ -91,7 +91,7 @@ DATABASE_URL = env.str("DATABASE_URL")
 
 DATABASES = {
     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}   
+}
 
 
 # Password validation
