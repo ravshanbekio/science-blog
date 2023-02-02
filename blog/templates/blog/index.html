@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<!-- Begin Site Title
+================================================== -->
+<div class="container">
+	<div class="mainheading">
+		<h1 class="sitetitle">Ravshanbek's Blog</h1>
+		<p class="lead">
+			Hayolparastlar uchun Maslahatlar, ko'rsatmalar hamda videodarslar
+		</p>
+	</div>
+<!-- End Site Title
+================================================== -->
+
+	<!-- Begin Featured
+	================================================== -->
+	<section class="featured-posts">
+	<div class="section-title">
+		<h2><span>Featured</span></h2>
+	</div>
+	<div class="card-columns listfeaturedtag">
+		{% for pin in pinned_blogs %}
+			<!-- begin post -->
+			<div class="card">
+				<div class="row">
+					<div class="col-md-5 wrapthumbnail">
+						<a href="{% url 'blog-detail' pin.blog.slug %}">
+							<img src="{{pin.blog.preview_image.url}}" class="img-fluid" alt="Preview photo">
+						</a>
+					</div>
+					<div class="col-md-7">
+						<div class="card-block">
+							<h2 class="card-title"><a href="{% url 'blog-detail' pin.blog.slug %}">{{ pin.blog.title }}</a></h2>
+							<h4 class="card-text">{{ pin.blog.subtitle }}</h4>
+							<div class="metafooter">
+								<div class="wrapfooter">
+									<span class="author-meta">
+									<span class="post-date">{{ pin.blog.added_date }}</span><span class="dot"></span><span class="post-read">{{ pin.blog.estimated_read_time }} min read</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+		{% endfor %}
+	</div>
+	</section>
+	<!-- End Featured
+	================================================== -->
+
+	<!-- Begin List Posts
+	================================================== -->
+	<section class="recent-posts">
+	<div class="section-title">
+		<h2><span>All Stories</span></h2>
+	</div>
+	<div class="card-columns listrecent">
+		{% for blog in blogs %}
+			<!-- begin post -->
+			<div class="card">
+				<a href="{% url 'blog-detail' blog.slug %}">
+					<img class="img-fluid" src="{{ blog.preview_image.url }}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="{% url 'blog-detail' blog.slug %}">{{ blog.title }}</a></h2>
+					<h4 class="card-text">{{ blog.subtitle }}</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							</span>
+							<span class="author-meta">
+							<span class="post-date">{{ blog.added_date }}</span><span class="dot"></span><span class="post-read">{{ blog.estimated_read_time }} min read</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+		{% endfor %}
+
+	</div>
+	</section>
+	<!-- End List Posts
+	================================================== -->
+
+{% endblock content %}
