@@ -143,4 +143,4 @@ MEDIA_ROOT = str(
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://science-blog-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://science-blog-production.up.railway.app','https://www.ravshanenergy.uz','https://ravshanenergy.uz']
