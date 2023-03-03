@@ -5,4 +5,5 @@ urlpatterns = [
     path('',IndexView.as_view(), name='index'),
     path('story/<slug:slug>/',BlogDetailView.as_view(), name='blog-detail'),
     path('author/',AuthorView.as_view(), name='author'),
+    #path('#filter=<category>',FilterCategoriesView.as_view(), name='filter-categories'),
 ]

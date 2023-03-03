@@ -6,6 +6,7 @@ from django.utils.text import slugify
 
 class Category(models.Model):
     name = models.CharField(max_length=25)
+    slug = models.SlugField(blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Category"
@@ -30,11 +31,11 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
-class PinnedBlog(models.Model):
-    blog = models.ForeignKey(Blog, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.blog.title
+@receiver(post_save, sender=Category)
+def post_save_category(instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(instance.name)
+        instance.save()
     
 @receiver(post_save, sender=Blog)
 def pre_save_blog(instance, *args, **kwargs):

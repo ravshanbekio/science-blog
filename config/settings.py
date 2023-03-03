@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from environs import Env
+from django.utils.translation import gettext_lazy as _
 
 # #Environment variables
 env = Env()
@@ -30,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["www.ravshanenergy.uz","science-blog-production.up.railway.app","ravshanenergy.uz"]
+ALLOWED_HOSTS = ["www.ravshanenergy.uz","science-blog-production.up.railway.app","ravshanenergy.uz","127.0.0.1"]
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
+    'modeltranslation',
     'ckeditor',
 
     'blog.apps.BlogConfig',
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',   
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -116,12 +119,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ('en',_("English")),
+    ('uz',_("Uzbek")),
+    ('ru',_("Russian"))
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

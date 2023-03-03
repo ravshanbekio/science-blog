@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- Begin Nav
 ================================================== -->
 <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
@@ -13,16 +14,33 @@
             <!-- Begin Menu -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="{% url 'index' %}">Stories <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'index' %}">Stories</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                 <a class="nav-link" href="{% url 'author' %}">Author</a>
                 </li>
             </ul>
             <!-- End Menu -->
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input type="hidden" name="next" value="{{ redirect_to }}">
+                <div class="dropdown">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Choose the language
+                    </a>
+                    
+                    <ul class="dropdown-menu">
+                        {% for language in languages %}
+                            <li><a class="dropdown-item" href="">{{ language.name_local }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>  
+            </form>
             <!-- Begin Search -->
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'index' %}">
+                <input class="form-control mr-sm-2" type="text" name="search_query" placeholder="Search">
                 <span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
             </form>
             <!-- End Search -->
