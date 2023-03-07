@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
 
@@ -82,17 +83,17 @@
 ================================================== -->
 <div class="graybg">
 	<div class="container">
-		<h3>O'xshash mavzular</h3>
+		<h3>{% blocktrans %}Related{% endblocktrans %}</h3>
 		<div class="row listrecent listrelated">
             {% for blog in blogs %}
                 <!-- begin post -->
                 <div class="col-md-4">
                     <div class="card">
-                        <a href="{% url 'blog-detail' blog.slug %}">
+                        <a href="{% url 'blog:blog-detail' blog.slug %}">
                         <img class="img-fluid img-thumb" src="{{ blog.preview_image.url }}" alt="">
                         </a>
                         <div class="card-block">
-                            <h2 class="card-title"><a href="{% url 'blog-detail' blog.slug %}">{{ blog.title }}</a></h2>
+                            <h2 class="card-title"><a href="{% url 'blog:blog-detail' blog.slug %}">{{ blog.title }}</a></h2>
                             <div class="metafooter">
                                 <div class="wrapfooter">
                                     <span class="meta-footer-thumb">

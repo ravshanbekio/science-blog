@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'django.contrib.sites', 
+    'django.contrib.sitemaps',
 
     'modeltranslation',
     'ckeditor',
@@ -119,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Tashkent'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -131,6 +133,7 @@ LANGUAGES = [
     ('ru',_("Russian"))
 ]
 
+LOCALE_PATH = str(BASE_DIR/ 'locale')
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 # Static files (CSS, JavaScript, Images)
@@ -152,5 +155,5 @@ MEDIA_ROOT = str(
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+SITE_ID = 1
 CSRF_TRUSTED_ORIGINS = ['https://science-blog-production.up.railway.app','https://www.ravshanenergy.uz','https://ravshanenergy.uz']

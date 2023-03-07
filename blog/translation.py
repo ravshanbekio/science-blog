@@ -5,6 +5,6 @@ from .models import Category, Blog
 class CategoryTranslationOption(TranslationOptions):
     fields = ('name',)
 
-
+@register(Blog)
 class BlogTranslationOption(TranslationOptions):
     fields = ('title','subtitle','body',)
