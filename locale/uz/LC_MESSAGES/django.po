@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-05 13:25+0500\n"
+"POT-Creation-Date: 2023-03-07 22:05+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,12 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\blog\templates\blog\author.html:17
-msgid "MedWait</a> asoschisi va 1.5 yillik tajribaga ega <strong>Software engineer</strong>"
-msgstr "MedWait</a> asoschisi va 1.5 yillik tajribaga ega <strong>Software engineer</strong>"
+msgid ""
+"Founder of MedWait</a> and <strong>Software engineer</strong> with 1.5 years "
+"of experience"
+msgstr "Medwait asoschisi va 1.5 yillik tajribaga ega <strong>Software engineer</strong>"
+
+#: .\blog\templates\blog\author.html:18
+msgid "Github page"
+msgstr "Github sahifa"
 
 #: .\blog\templates\blog\index.html:15
 msgid "Tips, instructions and video tutorials for dreamers"
-msgstr "Hayolparastlar uchun Maslahatlar, ko'rsatmalar hamda videodarslar"
+msgstr "Xayolparastlar uchun maslahatlar, ko'rsatmalar va video darsliklar"
 
 #: .\blog\templates\blog\index.html:25
 msgid "All Stories"
@@ -40,27 +46,27 @@ msgstr "Keyingi"
 
 #: .\blog\templates\blog\post.html:86
 msgid "Related"
-msgstr "O'xshash mavzular"
+msgstr "O'xshash mavuzlar"
 
-#: .\config\settings.py:129
+#: .\config\settings.py:131
 msgid "English"
 msgstr ""
 
-#: .\config\settings.py:130
+#: .\config\settings.py:132
 msgid "Uzbek"
 msgstr ""
 
-#: .\config\settings.py:131
+#: .\config\settings.py:133
 msgid "Russian"
 msgstr ""
 
 #: .\templates\base.html:10
 msgid "Ravshanbek's Blog - About Technology and Programming!"
-msgstr "Ravshanbekning blogi - Dasturlash va Texnologiya haqida!"
+msgstr "Ravshanbekning blogi - Dasturlash va texnologiya haqida!"
 
 #: .\templates\navbar.html:17
 msgid "Stories"
-msgstr "HIkoyalar"
+msgstr "Hikoyalar"
 
 #: .\templates\navbar.html:20
 msgid "Author"

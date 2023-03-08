@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 21:54+0500\n"
+"POT-Creation-Date: 2023-03-07 22:05+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,13 @@ msgstr ""
 
 #: .\blog\templates\blog\author.html:17
 msgid ""
-"MedWait</a> asoschisi va 1.5 yillik tajribaga ega <strong>Software engineer</"
-"strong>"
-msgstr ""
 "Founder of MedWait</a> and <strong>Software engineer</strong> with 1.5 years "
 "of experience"
+msgstr "Founder of MedWait</a> and <strong>Software engineer</strong> with 1.5 years of experience"
+
+#: .\blog\templates\blog\author.html:18
+msgid "Github page"
+msgstr "Github page"
 
 #: .\blog\templates\blog\index.html:15
 msgid "Tips, instructions and video tutorials for dreamers"
@@ -36,7 +38,7 @@ msgstr "All Stories"
 
 #: .\blog\templates\blog\index.html:61
 msgid "Prev"
-msgstr "Previous"
+msgstr "Prev"
 
 #: .\blog\templates\blog\index.html:76
 msgid "Next"
@@ -72,7 +74,7 @@ msgstr "Author"
 
 #: .\templates\navbar.html:36
 msgid "\"Go\""
-msgstr "Change"
+msgstr "Go"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
 msgid "Search files"
@@ -1331,6 +1333,3 @@ msgstr ""
 #: .\venv\Lib\site-packages\modeltranslation\widgets.py:26
 msgid "None"
 msgstr ""
-
-#~ msgid "Hayolparastlar uchun Maslahatlar, ko'rsatmalar hamda videodarslar"
-#~ msgstr "Tips, instructions and video tutorials for dreamers"

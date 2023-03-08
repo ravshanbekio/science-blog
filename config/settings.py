@@ -133,7 +133,9 @@ LANGUAGES = [
     ('ru',_("Russian"))
 ]
 
-LOCALE_PATH = str(BASE_DIR/ 'locale')
+LOCALE_PATHS = [
+    BASE_DIR / 'locale'
+]
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 # Static files (CSS, JavaScript, Images)
