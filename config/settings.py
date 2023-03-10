@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'modeltranslation',
     'ckeditor',
+    'django_social_share',
 
     'blog.apps.BlogConfig',
 ]
