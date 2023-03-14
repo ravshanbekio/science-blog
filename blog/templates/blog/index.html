@@ -2,6 +2,11 @@
 {% load static %}
 {% load i18n %}
 
+{% block meta %}
+<meta name="description" content="">
+<meta name="author" content="Ravshanbek Madaminov">
+{% endblock meta %}
+
 {% block content %}
 
 {% include 'navbar.html' %}
@@ -21,34 +26,62 @@
 	<!-- Begin List Posts
 	================================================== -->
 	<section class="recent-posts">
-	<div class="section-title">
-		<h2><span>{% blocktrans %}All Stories{% endblocktrans %}</span></h2>
-	</div>
-	<div class="card-columns listrecent">
-		{% for blog in blogs %}
-			<!-- begin post -->
-			<div class="card">
-				<a href="{% url 'blog:blog-detail' blog.slug %}">
-					<img class="img-fluid" src="{{ blog.preview_image.url }}" alt="">
-				</a>
-				<div class="card-block">
-					<h2 class="card-title"><a href="{% url 'blog:blog-detail' blog.slug %}">{{ blog.title }}</a></h2>
-					<h4 class="card-text">{{ blog.subtitle }}</h4>
-					<div class="metafooter">
-						<div class="wrapfooter">
-							<span class="meta-footer-thumb">
-							</span>
-							<span class="author-meta">
-							<span class="post-date">{{ blog.added_date }}</span><span class="dot"></span><span class="post-read">{{ blog.estimated_read_time }} min read</span>
-							</span>
+		<div class="section-title">
+			<h2><span>{% blocktrans %}Popular Stories{% endblocktrans %}</span></h2>
+		</div>
+		<div class="card-columns listrecent">
+			{% for popular_blog in popular_blogs %}
+				<!-- begin post -->
+				<div class="card">
+					<a href="{% url 'blog:blog-detail' popular_blog.slug %}">
+						<img class="img-fluid" src="{{ popular_blog.preview_image.url }}" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="{% url 'blog:blog-detail' popular_blog.slug %}">{{ popular_blog.title }}</a></h2>
+						<h4 class="card-text">{{ popular_blog.subtitle }}</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								</span>
+								<span class="author-meta">
+								<span class="post-date">{{ popular_blog.added_date }}</span><span class="dot"></span><span class="post-read">{{ puplar_blog.estimated_read_time }} min read</span>
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- end post -->
-		{% endfor %}
+				<!-- end post -->
+			{% endfor %}
 
-	</div>
+		</div>
+		<div class="section-title">
+			<h2><span>{% blocktrans %}All Stories{% endblocktrans %}</span></h2>
+		</div>
+		<div class="card-columns listrecent">
+			{% for blog in blogs %}
+				<!-- begin post -->
+				<div class="card">
+					<a href="{% url 'blog:blog-detail' blog.slug %}">
+						<img class="img-fluid" src="{{ blog.preview_image.url }}" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="{% url 'blog:blog-detail' blog.slug %}">{{ blog.title }}</a></h2>
+						<h4 class="card-text">{{ blog.subtitle }}</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								</span>
+								<span class="author-meta">
+								<span class="post-date">{{ blog.added_date }}</span><span class="dot"></span><span class="post-read">{{ blog.estimated_read_time }} min read</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
+			{% endfor %}
+
+		</div>
 	</section>
 	<!-- End List Posts
 	================================================== -->

@@ -7,6 +7,7 @@ from .utils import searchBlogs, paginateBlogs
 class IndexView(View):
     def get(self, request):
         blogs, search_query = searchBlogs(request)
+        popular_blogs = blogs.order_by('views')[:2]
         categories_query = Category.objects.all()
         # paginate blogs
         custom_range, blogs = paginateBlogs(request, blogs, 12)
@@ -14,10 +15,11 @@ class IndexView(View):
             'categories':categories_query,
             'blogs':blogs,
             'search_query':search_query,
-            'custom_range':custom_range
+            'custom_range':custom_range,
+            'popular_blogs':popular_blogs
         }
         return render(request, 'blog/index.html', context)
-    
+     
 class BlogDetailView(View):
     def get(self, request, slug):
         blog = Blog.objects.get(slug=slug)

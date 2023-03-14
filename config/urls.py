@@ -3,6 +3,8 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemap import BlogSitemap, CategorySitemap
 from django.contrib.admin.sites import AdminSite
 from django.shortcuts import redirect
 
@@ -21,6 +23,10 @@ from django.shortcuts import redirect
 #         ]
 #         return urls
 
+sitemaps = {
+    'blog':BlogSitemap,
+    'category':CategorySitemap
+}
 
 urlpatterns = [
     # path('manage/admin/',MyAdminSite.get_urls),
@@ -28,6 +34,7 @@ urlpatterns = [
 ] + i18n_patterns(
     path('i18n/',include('django.conf.urls.i18n')),
     path('',include('blog.urls'), name=settings.LANGUAGES),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 )
 
 if settings.DEBUG:

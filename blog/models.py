@@ -3,6 +3,7 @@ from ckeditor.fields import RichTextField
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from django.utils.text import slugify
+from .signals import add_gpt_response
 
 class Category(models.Model):
     name = models.CharField(max_length=25)
@@ -18,9 +19,10 @@ class Blog(models.Model):
     title = models.CharField(max_length=120)
     subtitle = models.CharField(max_length=70)
     slug = models.SlugField(blank=True, null=True)
-    body = RichTextField()
+    body = RichTextField(blank=True)
     preview_image = models.FileField()
     category = models.ManyToManyField(Category, related_name='blogs')
+    meta_description = models.CharField(max_length=150)
     views = models.IntegerField(default=0)
     added_date = models.DateField(auto_now_add=True)
     estimated_read_time = models.IntegerField(default=2)
@@ -42,3 +44,5 @@ def pre_save_blog(instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = slugify(instance.title)
         instance.save()
+
+add_gpt_response(instance=Blog)

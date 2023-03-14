@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 22:05+0500\n"
+"POT-Creation-Date: 2023-03-11 21:53+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,49 +18,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\blog\templates\blog\author.html:17
+#: .\blog\templates\blog\author.html:22
 msgid ""
 "Founder of MedWait</a> and <strong>Software engineer</strong> with 1.5 years "
 "of experience"
-msgstr "Founder of MedWait</a> and <strong>Software engineer</strong> with 1.5 years of experience"
+msgstr ""
+"Founder of MedWait</a> and <strong>Software engineer</strong> with 1.5 years "
+"of experience"
 
-#: .\blog\templates\blog\author.html:18
+#: .\blog\templates\blog\author.html:23
 msgid "Github page"
 msgstr "Github page"
 
-#: .\blog\templates\blog\index.html:15
+#: .\blog\templates\blog\index.html:20
 msgid "Tips, instructions and video tutorials for dreamers"
 msgstr "Tips, instructions and video tutorials for dreamers"
 
-#: .\blog\templates\blog\index.html:25
+#: .\blog\templates\blog\index.html:30
 msgid "All Stories"
 msgstr "All Stories"
 
-#: .\blog\templates\blog\index.html:61
+#: .\blog\templates\blog\index.html:66
 msgid "Prev"
 msgstr "Prev"
 
-#: .\blog\templates\blog\index.html:76
+#: .\blog\templates\blog\index.html:81
 msgid "Next"
 msgstr "Next"
 
-#: .\blog\templates\blog\post.html:86
+#: .\blog\templates\blog\post.html:57
+msgid "Posted on "
+msgstr "Posted on"
+
+#: .\blog\templates\blog\post.html:93
 msgid "Related"
 msgstr "Related"
 
-#: .\config\settings.py:131
+#: .\config\settings.py:132
 msgid "English"
 msgstr ""
 
-#: .\config\settings.py:132
+#: .\config\settings.py:133
 msgid "Uzbek"
 msgstr ""
 
-#: .\config\settings.py:133
+#: .\config\settings.py:134
 msgid "Russian"
 msgstr ""
 
-#: .\templates\base.html:10
+#: .\templates\base.html:16
 msgid "Ravshanbek's Blog - About Technology and Programming!"
 msgstr "Ravshanbek's Blog - About Technology and Programming!"
 
